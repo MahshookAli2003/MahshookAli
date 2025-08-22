@@ -14,6 +14,7 @@ body{
     background-repeat: no-repeat;
     scroll-snap-align: start;
     background-position: center;
+    background-color: #0044ff;
    
     
 }
@@ -24,6 +25,8 @@ nav{
     justify-content: space-between; 
     align-items: center; 
     padding: 0 15px; 
+  
+
 } 
 .parallax{
      
@@ -459,10 +462,10 @@ a navbar-brand{
    backdrop-filter: blur(30px);
     box-shadow: 0px 0px 30px rgba(277,228,237,0.37);
     border-radius: 10px;
-    border: 3px solid hsl(0,0%,100%0.3);
+    border: 3px solid rgba(255, 255, 255, 0.8);
     
-    box-shadow: 0 0 30px #000000,
-    0 0 20px #fff,0 0 30px a;
+    /* box-shadow: 0 0 30px #000000,
+    0 0 20px #fff,0 0 30px a; */
 
 }
 
@@ -561,25 +564,25 @@ a navbar-brand{
             transform: translateY(-2px);
         }
         .social-icons-container {
-    margin-top: 30px; /* Adds space above the icons to separate them from the form */
+    margin-top: 30px; 
     text-align: center;
     display: flex;
     justify-content: center;
-    gap: 25px; /* Adjusts the space between the icons */
+    gap: 25px; 
 }
 
 .social-icons-container a {
-    color: #fff; /* Sets the default color of the icons */
-    font-size: 2em; /* Increases icon size */
+    color: #fff; 
+    font-size: 2em; 
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .social-icons-container a:hover {
-    transform: scale(1.2); /* Makes icons slightly bigger on hover */
-    color: #007bff; /* Changes color on hover for visual feedback */
+    transform: scale(1.2); 
+    color: #007bff; 
 }
 
-/* Specific color for each icon on hover for more style */
+
 .social-icons-container a .fa-instagram:hover {
     color: #e4405f;
 }
