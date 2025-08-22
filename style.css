@@ -1,6 +1,9 @@
 * {
     margin: 0;
     box-sizing: border-box; 
+    overflow-x: hidden;
+   
+
 }
 body{
     background:linear-gradient(to right,#030727,#2e1212f5);
@@ -23,16 +26,7 @@ nav{
     padding: 0 15px; 
 } 
 .parallax{
-     /* background:linear-gradient(to right,#030727,#2e1212f5);
-    width: auto;
-    height: 100vh;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    scroll-snap-align: start;
-    background-position: center; */
-    /* background-color: #ccc; */
-    
+     
 
 }
 
@@ -68,7 +62,7 @@ a navbar-brand{
     
 }
 .nav-link {
-    color: #fff; /* Default color of the text */
+    color: #fff; 
     transition: all 0.5s ease-in-out; 
     position: relative;
     font-family: 'poppins',sans-serif;
@@ -86,7 +80,7 @@ a navbar-brand{
     text-decoration: underline;
     transform: scale(1.1);
     transition: .5s;
-    color: #ffffff; /* Changes the text color to white on hover */
+    color: #ffffff; 
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
     
     
@@ -100,8 +94,8 @@ a navbar-brand{
 .offcanvas-body {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers vertically */
-  align-items: center;     /* Centers horizontally */
+  justify-content: center; 
+  align-items: center;     
   text-align: center;
 }
 #myLogo{
@@ -113,6 +107,7 @@ a navbar-brand{
 #myLogo:hover{
     transform: scale3d(5);
 
+
 }
 #cv-btn{
     margin-right: 100px;
@@ -123,13 +118,17 @@ a navbar-brand{
     padding: 10px;
     color: #928dab;
     font-family: Arial, Helvetica, sans-serif;
+    
+
+
+    
 
     
 
 }
 #cv-btn:hover{
     display: block;
-    filter: drop-shadow(0 0 10px #fffdef);
+    filter: drop-shadow(0 0 10px #ffffff);
     color: #fff;
     transition: 0.5s;
 
@@ -163,7 +162,7 @@ a navbar-brand{
 
 .left-text h1{
     color: #fff;
-    /* font-size: 66px; */
+   
     white-space: nowrap;
    font-family: "poppins",sans-serif;
    font-weight: bolder;
@@ -188,7 +187,9 @@ a navbar-brand{
     color: #c77dff;
 }
 .left-text h2{
+   
     color: #ccc;
+    overflow: hidden;
 }
 @media (max-width:800px){
     .left-text h1{
@@ -230,7 +231,7 @@ a navbar-brand{
     border: none;
     border-radius: 50px;
     padding: 10px;
-    color: #928dab;
+    color: #8f82cf;
     font-family: Arial, Helvetica, sans-serif;
     width: 150px;
 
@@ -239,9 +240,10 @@ a navbar-brand{
 }
 .btn-hire:hover{
      
-    filter: drop-shadow(0 0 10px #fffdef);
+    filter: drop-shadow(0 0 20px  #fff);
     color: #fff;
     transition: 0.5s;
+    
 
 
 }
@@ -270,27 +272,27 @@ a navbar-brand{
 
 
 .second-parallax{
-     margin-top: 300PX;
+     /* margin-top: 300PX; */
 }
 .main{
-    padding: 50px;
+    /* padding: 50px;
     height: 100vh;
-    width: 100%;
+    width: 100%; */
      
 }
 .main-box{
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     
    
-   backdrop-filter: blur(30px);
+   /* backdrop-filter: blur(30px);
     box-shadow: 0px 0px 30px rgba(277,228,237,0.37);
     border-radius: 10px;
-    border: 3px solid hsl(0,0%,100%0.3);
+    border: 3px solid hsl(0,0%,100%0.3); */
     /* background: rebeccapurple; */
     /* backdrop-filter: blur(2px); */
-    box-shadow: 0 0 30px #000000,
-    0 0 20px #fff,0 0 30px a;
+    /* box-shadow: 0 0 30px #000000,
+    0 0 20px #fff,0 0 30px a; */
 }
 .sec{
     width: 100%;
@@ -311,6 +313,7 @@ a navbar-brand{
 .img-sec{
     float: right;
     width: 40%;
+    overflow-y: hidden
 
 }
 .img-sec img{
@@ -329,6 +332,9 @@ a navbar-brand{
     font-size: 28px;
      font-family: "poppins",sans-serif;
 
+}
+.fw-bold{
+        overflow-y: hidden;
 }
 .content-text h3{
     margin-top: 20px;
@@ -731,3 +737,32 @@ a navbar-brand{
            
             
         }
+        h1{
+            overflow-y: hidden;
+
+        }
+        h2{
+            overflow-y: hidden;
+
+        }
+        h4{
+            overflow-y: hidden;
+
+        }
+        h3{
+            overflow-y: hidden;
+
+        }
+        h5{
+            overflow-y: hidden;
+
+        }
+        h6{
+            overflow-y: hidden;
+
+        }
+       
+
+
+
+    
