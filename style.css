@@ -25,12 +25,16 @@ nav{
     justify-content: space-between; 
     align-items: center; 
     padding: 0 15px; 
+   
+    
+    
+    
+
   
 
 } 
 .parallax{
-     
-
+   
 }
 
 
@@ -629,7 +633,7 @@ a navbar-brand{
             display: flex;
             flex-direction: column;
             gap: 25px;
-            margin-left: 30px;
+            margin-left: 20px;
         }
 
         .contact-card h2 {
@@ -735,7 +739,7 @@ a navbar-brand{
             display: flex;
             flex-direction: column;
             /* gap: 25px; */
-            margin-left: 30px;
+            margin-left: 20px;
            
            
             
