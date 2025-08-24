@@ -1,83 +1,148 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     const form = document.getElementById('contactForm');
-//     const formStatus = document.getElementById('form-status');
 
-//     form.addEventListener('submit', function(e) {
-//         e.preventDefault(); // Prevents the default form submission and page redirect
-
-//         const data = new FormData(e.target);
-
-//         // Display a "sending" message
-//         formStatus.textContent = 'Sending...';
-
-//         fetch(e.target.action, {
-//             method: 'POST',
-//             body: data,
-//             headers: {
-//                 'Accept': 'application/json'
+// function sendEmail(event) {
+//     event.preventDefault(); 
+//     let params = {
+//         name: document.getElementById('names').value,
+//         email: document.getElementById('emails').value,
+//         message: document.getElementById('message').value,
+//         phone: document.getElementById('phone').value
+//     };
+//     const serviceID = "service_i2agdpl";
+// const templateID = "template_v4ar0zt";
+//     emailjs.send(serviceID, templateID,params)
+//         .then(
+//             res => {
+//                 document.getElementById('names').value = '';
+//                 document.getElementById('emails').value = '';
+//                 document.getElementById('message').value = '';
+//                 document.getElementById('phone').value = '';
+//                 console.log(res);
+//                 alert("Your message has been sent successfully!");
 //             }
-//         }).then(response => {
-//             if (response.ok) {
-//                 formStatus.textContent = 'Thanks for your message!';
-//                 form.reset(); // Clears the form fields
-//             } else {
-//                 response.json().then(data => {
-//                     if (Object.hasOwn(data, 'errors')) {
-//                         formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
-//                     } else {
-//                         formStatus.textContent = 'Oops! There was a problem submitting your form.';
-//                     }
-//                 })
-//             }
-//         }).catch(error => {
-//             formStatus.textContent = 'Oops! There was a problem submitting your form.';
-//         });
-//     });
-// });
-
-// function sendMail(){
-//     var params={
-//         name:document.getElementById("names").value ,
-//         email:document.getElementById("emails").value,
-//          message:document.getElementById("message").value
-//     }
-//     const serviceID="";
-// const templeteID=""
-
-// emailjs.send(serviceID,templeteID,params)
-// .then(
-//     res=>{
-//         document.getElementById("names").value="";
-//         document.getElementById("emails").value="";
-//         document.getElementById("message").value="";
-//         console.log(res);
-//         alert("message sent successfully")
-//     }
-// )
-// .catch((err)=>console.log(err));
+//         )
+//         .catch(err => console.log(err));
 // }
+/* ----- NAVIGATION BAR FUNCTION ----- */
+    function myMenuFunction(){
+      var menuBtn = document.getElementById("myNavMenu");
 
-function sendEmail(event) {
-    event.preventDefault(); 
-    let params = {
-        name: document.getElementById('names').value,
-        email: document.getElementById('emails').value,
-        message: document.getElementById('message').value,
-        phone: document.getElementById('phone').value
-    };
-    const serviceID = "service_i2agdpl";
-const templateID = "template_v4ar0zt";
-    emailjs.send(serviceID, templateID,params)
-        .then(
-            res => {
-                document.getElementById('names').value = '';
-                document.getElementById('emails').value = '';
-                document.getElementById('message').value = '';
-                document.getElementById('phone').value = '';
-                console.log(res);
-                alert("Your message has been sent successfully!");
-            }
-        )
-        .catch(err => console.log(err));
-}
+      if(menuBtn.className === "nav-menu"){
+        menuBtn.className += " responsive";
+      } else {
+        menuBtn.className = "nav-menu";
+      }
+    }
+
+/* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
+    window.onscroll = function() {headerShadow()};
+
+    function headerShadow() {
+      const navHeader =document.getElementById("header");
+
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop >  50) {
+
+        navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
+        navHeader.style.height = "70px";
+        navHeader.style.lineHeight = "70px";
+
+      } else {
+
+        navHeader.style.boxShadow = "none";
+        navHeader.style.height = "90px";
+        navHeader.style.lineHeight = "90px";
+
+      }
+    }
+
+
+/* ----- TYPING EFFECT ----- */
+   var typingEffect = new Typed(".typedText",{
+      strings : ["Software Developer","VJ (Visual Jockey)"],
+      loop : true,
+      typeSpeed : 100,
+      backSpeed : 80,
+      backDelay : 2000
+   })
+
+
+/* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
+   const sr = ScrollReveal({
+          origin: 'top',
+          distance: '80px',
+          duration: 2000,
+          reset: true
+   })
+
+  /* -- HOME -- */
+  sr.reveal('.featured-text-card',{})
+  sr.reveal('.featured-name',{delay: 100})
+  sr.reveal('.featured-text-info',{delay: 200})
+  sr.reveal('.featured-text-btn',{delay: 200})
+  sr.reveal('.social_icons',{delay: 200})
+  sr.reveal('.featured-image',{delay: 300})
+
+
+  /* -- PROJECT BOX -- */
+  sr.reveal('.card-project',{interval: 200})
+
+  /* -- HEADINGS -- */
+  sr.reveal('.top-header',{})
+
+/* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
+
+  /* -- ABOUT INFO & CONTACT INFO -- */
+  const srLeft = ScrollReveal({
+    origin: 'left',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+  })
+
+  srLeft.reveal('.about-info',{delay: 100})
+  srLeft.reveal('.contact-info',{delay: 100})
+
+  /* -- ABOUT SKILLS & FORM BOX -- */
+  const srRight = ScrollReveal({
+    origin: 'right',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+  })
+
+  srRight.reveal('.skills-box',{delay: 100})
+  srRight.reveal('.form-control',{delay: 100})
+  srRight.reveal('.fm-bom',{delay: 100})
+
+
+
+/* ----- CHANGE ACTIVE LINK ----- */
+
+  const sections = document.querySelectorAll('section[id]')
+
+  function scrollActive() {
+    const scrollY = window.scrollY;
+
+    sections.forEach(current =>{
+      const sectionHeight = current.offsetHeight,
+          sectionTop = current.offsetTop - 50,
+        sectionId = current.getAttribute('id')
+
+      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+
+          document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
+
+      }  else {
+
+        document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
+
+      }
+    })
+  }
+
+  window.addEventListener('scroll', scrollActive)
+
+
+
+//   ---------animations------
+
 
