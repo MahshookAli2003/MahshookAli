@@ -1,58 +1,74 @@
+// ----------------------navbar hamberger-----------
 
-// function sendEmail(event) {
-//     event.preventDefault(); 
-//     let params = {
-//         name: document.getElementById('names').value,
-//         email: document.getElementById('emails').value,
-//         message: document.getElementById('message').value,
-//         phone: document.getElementById('phone').value
-//     };
-//     const serviceID = "service_i2agdpl";
-// const templateID = "template_v4ar0zt";
-//     emailjs.send(serviceID, templateID,params)
-//         .then(
-//             res => {
-//                 document.getElementById('names').value = '';
-//                 document.getElementById('emails').value = '';
-//                 document.getElementById('message').value = '';
-//                 document.getElementById('phone').value = '';
-//                 console.log(res);
-//                 alert("Your message has been sent successfully!");
-//             }
-//         )
-//         .catch(err => console.log(err));
-// }
-/* ----- NAVIGATION BAR FUNCTION ----- */
-    function myMenuFunction(){
-      var menuBtn = document.getElementById("myNavMenu");
+        const navbarToggle=document.querySelector('.navbar-toggle')
+const navbarMenu=document.querySelector(".navbar-menu")
+navbarToggle.addEventListener('click',()=>{
+    navbarToggle.classList.toggle('active');
+    navbarMenu.classList.toggle('active');
 
-      if(menuBtn.className === "nav-menu"){
-        menuBtn.className += " responsive";
-      } else {
-        menuBtn.className = "nav-menu";
-      }
+
+})
+
+
+
+
+// -----------email js-------------------------
+function sendEmail(event) {
+    event.preventDefault(); // This stops the form from submitting automatically
+
+    // Get the values from the form fields
+    const name = document.getElementById('names').value;
+    const email = document.getElementById('emails').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+
+    // Check if all fields are filled
+    if (name && email && phone && message) {
+        // All fields are filled, now you can proceed to send the email
+        let params = {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message,
+        };
+
+        const serviceID = "service_i2agdpl";
+        const templateID = "template_v4ar0zt";
+
+        emailjs.send(serviceID, templateID, params)
+            .then(
+                res => {
+                    // Success: clear the form and show a success message
+                    document.getElementById('names').value = '';
+                    document.getElementById('emails').value = '';
+                    document.getElementById('message').value = '';
+                    document.getElementById('phone').value = '';
+                    console.log(res);
+                    alert("Your message has been sent successfully!");
+                }
+            )
+            .catch(err => {
+                // Error: log the error
+                console.log(err);
+                alert("An error occurred. Please try again later.");
+            });
+    } else {
+        // At least one field is empty, show an alert
+        alert("Please fill out all the required fields.");
     }
+}
 
-/* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
-    window.onscroll = function() {headerShadow()};
 
-    function headerShadow() {
-      const navHeader =document.getElementById("header");
 
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop >  50) {
+// ---------------email js end-------------------
 
-        navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
-        navHeader.style.height = "70px";
-        navHeader.style.lineHeight = "70px";
 
-      } else {
 
-        navHeader.style.boxShadow = "none";
-        navHeader.style.height = "90px";
-        navHeader.style.lineHeight = "90px";
+    
 
-      }
-    }
+  
+
+
 
 
 /* ----- TYPING EFFECT ----- */
@@ -80,7 +96,8 @@
   sr.reveal('.featured-text-btn',{delay: 200})
   sr.reveal('.social_icons',{delay: 200})
   sr.reveal('.featured-image',{delay: 300})
-
+ 
+ sr.reveal('.project-box',{delay: 300})
 
   /* -- PROJECT BOX -- */
   sr.reveal('.card-project',{interval: 200})
@@ -112,6 +129,12 @@
   srRight.reveal('.skills-box',{delay: 100})
   srRight.reveal('.form-control',{delay: 100})
   srRight.reveal('.fm-bom',{delay: 100})
+   srLeft.reveal('.form-box',{delay: 100})
+   srLeft.reveal('.about',{delay: 100})
+   srLeft.reveal('.conttainer',{delay: 100})
+   srRight.reveal('.skill',{delay: 100})
+   srRight.reveal('.skill-head',{delay: 100})
+ 
 
 
 
@@ -143,6 +166,45 @@
 
 
 
-//   ---------animations------
+// --------------------skill animated----------------
+ // Animate progress bars when visible
+function animateProgressBars() {
+  document.querySelectorAll('.progress-bar').forEach(bar => {
+    let percent = bar.getAttribute('data-percent');
+    if (!bar.classList.contains('animated')) {
+      bar.style.width = percent + "%";
+      bar.classList.add('animated');
+    }
+  });
+}
+
+// Run animation on scroll
+window.addEventListener('scroll', () => {
+  let section = document.querySelector('.skills');
+  let sectionPos = section.getBoundingClientRect().top;
+  let screenPos = window.innerHeight / 1.3;
+
+  if (sectionPos < screenPos) {
+    animateProgressBars();
+  }
+});
+
+// Also trigger if already in view on load
+window.addEventListener('load', animateProgressBars);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------new-------------------
+
 
 
