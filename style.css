@@ -627,7 +627,7 @@ h3 {
     width: 100%;
     overflow: hidden;
     position: relative;
-    animation: rgbShadow 6s linear infinite;
+    /* animation: rgbShadow 6s linear infinite; */
 }
 
 /* Animate only the shadow */
